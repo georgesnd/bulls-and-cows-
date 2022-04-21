@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@500&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/184e988511.js" crossorigin="anonymous"></script>
+  <title>Bulls and Cows</title>
+
+  <head>
+    <style>
+      h1{
+        background-color: black;
+        color: yellow;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 100px;
+        text-align: center;
+        padding-top: 20px;
+        font-family: 'M PLUS Code Latin', sans-serif;
+       
+      }
+
+      h2 {
+        
+        color: black;
+		    font-size: 40px;
+        margin-bottom: 40px;
+        font-family: 'M PLUS Code Latin', sans-serif;
+
+      }
+      body {
+        color: black;
+		    font-size: 26px;
+        font-family: 'M PLUS Code Latin', sans-serif;
+
+     
+        
+      }
+      section {
+        height: 80vh;
+        background-image: url(./images/bulls_and_cows.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* margin-top: 0%; */
+        width: 100%;
+      }
+
+    .form {
+      background-color: rgba(122, 122, 117, 0.5);
+      width: 30%;
+      margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+    height: 84.5vh;
+    padding-top: 20px;
+    border-radius: 10%;
+    
+    }
+	  button{
+		  font-size: 20px;
+		  border-radius: 10% ;
+		  margin-top: 50px;
+      padding: 5px;
+      width: 150px;
+      font-family: 'M PLUS Code Latin', sans-serif;
+
+    
+	  }
+    label {
+      font-weight: bold;
+      
+    }
+    #click {
+      background-color: yellow;
+      margin-right: 15px;
+    }
+    #reset {
+      background-color: black;
+      color: yellow;
+      margin-left: 15px;
+    }
+	  textarea{
+		background-color:none;
+		border-radius: 10% ;
+		font-size:20px ;
+		padding-left: 5px;
+		text-align: center;
+    margin-top: 20px;
+    width: 80%;
+	  }
+    #endgame {
+      margin-top: 30px;
+      background-color: brown;
+      color: white;
+    }
+	  #guess{
+		  font-size: 20px;
+		  border-radius: 5% ;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 5px;
+      border-radius: 10%;
+	  }
+    #playername{
+      font-size: 20px;
+		  border-radius: 5% ;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 5px;
+      border-radius: 10%;
+    }
+    .guesstext{
+      /* display: flex; */
+      justify-content: center;
+      margin-top: 40px;
+    }
+    #guesscount {
+      margin-top: 20px;
+    }
+
+    .info{
+      display: none;
+      width: 25%;
+      position: absolute;
+      margin-left: 20px;
+      margin-top: 80px;
+      background-color:yellow ;
+      font-size: 20px;
+      border-radius: 5%;
+      padding: 15px;
+      font-weight:300;
+      text-align: justify;
+    }
+    i:hover + div{
+      display: block;
+    }
+    i{
+      font-size: 50px;
+      position: absolute;
+      margin: 20px;
+    }
+
+    </style>
+  </head>
+  <header>
+    <h1>!!! Bulls and Cows !!!</h1> <!--  How good is your guess? Try now!-->
+  </header>
+  <body>
+    
+    <section class="all">
+      <i class="fas fa-info-circle"></i>
+      <div class="info" >
+        <p> 
+          <h3> Rules </h3>
+          The computer generates a secret number, and the player tries to guess it.
+          The secret number must consist of 4 digits and each digit must be unique.
+          <br>
+          For example:
+          <br>
+          1112 would not be an acceptable secret number.
+          1234 on the other hand is an acceptable value for the secret number, since each digit is unique. <br>
+          After each guess, the player will get a hint to help them guess better next time around.
+          
+          The hint tells the player how many bulls and how many cows there were. What are bulls and cows?
+          
+          If there are any matching digits and they are in their right positions, they are counted as "bulls".
+          If in different positions, they are counted as "cows".</p>
+      </div>
+     <div class="form">
+       <h2> Guess? Try now</h2>  <!-- Bulls and Cows -->
+      <label for="playername">Name:</label>
+      <input type="text" id="playername" size="10" placeholder="john"> <br>
+      <label for="guess">Guess: </label>
+      <input type="text" id="guess" maxlength="4" size="10" placeholder="1234" />
+      <br />
+      <button id="click" onclick="validateGuess()">Check</button>
+      <button id="reset" onclick="reset()">Reload</button>
+       <div class="guesstext">
+        <div id="counter">Guess count: </div> 
+        <div id="guesscount">0</div>
+     </div>
+    
+      <br />
+      <textarea
+        id="output"
+        rows="6"
+        >
+	</textarea>
+
+  <button id="endgame" onclick="end()">End game</button>
+</div>
+    
+     
+     
+    </section>
+    
+    
+
+    <script src="game.js"></script>
+  </body>
+</html>
