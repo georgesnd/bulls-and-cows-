@@ -1,4 +1,5 @@
 # bulls-and-cows-Project
+This is a javascript and html project.
 
 In this project I will build a two player game that is called Bulls and Cows.
 ## Rules
